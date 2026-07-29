@@ -70,4 +70,5 @@ Testing/
 build
 .vscode
 .DS_Store
+.qtcreator
 

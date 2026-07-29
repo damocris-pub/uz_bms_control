@@ -1,5 +1,4 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #include <QMainWindow>
 
@@ -32,7 +31,11 @@ private slots:
 
     void on_btnMonitor_clicked();
 
+    void on_btnImport_clicked();
+
+    void on_btnOpenDfu_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
-#endif // MAINWINDOW_H
+
