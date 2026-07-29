@@ -1,6 +1,33 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+enum LedColor {
+    Led_Off,
+    Led_Green,
+    Led_Yellow,
+    Led_Red
+};
+
+void setLedStatus(QLabel *ledLabel, LedColor color)
+{
+    QString style = "border-radius: 12px; ";
+    switch (color) {
+    case Led_Off:
+        style += "background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.3, fy:0.3, stop:0 #B0B0B0, stop:1 #606060);";
+        break;
+    case Led_Green:
+        style += "background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.3, fy:0.3, stop:0 #A1FF96, stop:1 #00A000);";
+        break;
+    case Led_Yellow:
+        style += "background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.3, fy:0.3, stop:0 #99D0FF, stop:1 #0066CC);";
+        break;
+    case Led_Red:
+        style += "background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.3, fy:0.3, stop:0 #FF9A9A, stop:1 #D30000);";
+        break;
+    }
+    ledLabel->setStyleSheet(style);
+}
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
