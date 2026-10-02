@@ -21,6 +21,16 @@ qt_add_executable(UZ_BMS_CONTROL WIN32
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    UartPort.h
+    CanPort.h
+    CanPort.h
+    UartPort.cpp
+    SpscRingBuffer.h
+    BmsProtocol.h
+    BmsProtocol.cpp
+    CanPort.cpp
+
+
 )
 
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/UZ_BMS_CONTROL_zh_CN.ts")
